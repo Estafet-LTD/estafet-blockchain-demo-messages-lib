@@ -29,9 +29,9 @@ public class BankPaymentMessage {
         this.transactionId = transactionId;
     }
 
-    public static WalletPaymentMessage fromJSON(String message) {
+    public BankPaymentMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, WalletPaymentMessage.class);
+            return new ObjectMapper().readValue(message, BankPaymentMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

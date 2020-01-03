@@ -1,6 +1,5 @@
 package com.estafet.blockchain.demo.messages.lib;
 
-import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -21,9 +20,9 @@ public class SuccessTransactionMessage {
         this.transactionId = transactionId;
     }
 
-    public static WalletPaymentMessage fromJSON(String message) {
+    public SuccessTransactionMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, WalletPaymentMessage.class);
+            return new ObjectMapper().readValue(message, SuccessTransactionMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

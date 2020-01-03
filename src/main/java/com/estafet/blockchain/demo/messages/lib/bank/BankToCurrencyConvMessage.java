@@ -26,9 +26,9 @@ public class BankToCurrencyConvMessage {
         this.transactionId = transactionId;
     }
 
-    public static WalletPaymentMessage fromJSON(String message) {
+    public BankToCurrencyConvMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, WalletPaymentMessage.class);
+            return new ObjectMapper().readValue(message, BankToCurrencyConvMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

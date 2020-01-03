@@ -21,9 +21,9 @@ public class InvalidTransactionMessage {
         this.transactionId = transactionId;
     }
 
-    public static WalletPaymentMessage fromJSON(String message) {
+    public InvalidTransactionMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, WalletPaymentMessage.class);
+            return new ObjectMapper().readValue(message, InvalidTransactionMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
