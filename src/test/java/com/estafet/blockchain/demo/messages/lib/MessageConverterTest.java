@@ -4,6 +4,8 @@ import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentMessage;
 import com.estafet.blockchain.demo.messages.lib.bank.BankToCurrencyConvMessage;
 import com.estafet.blockchain.demo.messages.lib.bank.CURRENCY;
 import com.estafet.blockchain.demo.messages.lib.bank.CurrencyConvToValidatorMessage;
+import com.estafet.blockchain.demo.messages.lib.transaction.InvalidTransactionMessage;
+import com.estafet.blockchain.demo.messages.lib.transaction.SuccessTransactionMessage;
 import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
 import org.junit.Test;
 

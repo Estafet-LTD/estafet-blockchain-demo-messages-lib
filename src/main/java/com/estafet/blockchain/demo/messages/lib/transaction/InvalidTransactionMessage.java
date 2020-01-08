@@ -1,4 +1,4 @@
-package com.estafet.blockchain.demo.messages.lib;
+package com.estafet.blockchain.demo.messages.lib.transaction;
 
 import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
 import com.fasterxml.jackson.databind.ObjectMapper;
