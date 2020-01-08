@@ -1,9 +1,8 @@
 package com.estafet.blockchain.demo.messages.lib.transaction;
 
-import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class InvalidTransactionMessage {
 
