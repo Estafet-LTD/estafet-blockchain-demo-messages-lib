@@ -1,22 +1,22 @@
-package com.estafet.blockchain.demo.messages.lib;
+package com.estafet.blockchain.demo.messages.lib.transaction;
 
 import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
-public class SuccessTransactionMessage {
+public class InvalidTransactionMessage {
 
-    private String status;
+    private String reason;
     private String signature;
     private String transactionId;
 
-    public SuccessTransactionMessage(){
+    public InvalidTransactionMessage () {
 
     }
 
-    public SuccessTransactionMessage(String status, String signature, String transactionId) {
-        this.status = status;
+    public InvalidTransactionMessage(String reason, String signature, String transactionId) {
+        this.reason = reason;
         this.signature = signature;
         this.transactionId = transactionId;
     }
@@ -37,12 +37,12 @@ public class SuccessTransactionMessage {
         }
     }
 
-    public String getStatus() {
-        return status;
+    public String getReason() {
+        return reason;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public String getSignature() {
