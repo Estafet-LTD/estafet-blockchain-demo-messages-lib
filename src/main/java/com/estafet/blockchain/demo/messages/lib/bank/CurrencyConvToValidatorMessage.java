@@ -23,9 +23,9 @@ public class CurrencyConvToValidatorMessage {
         this.transactionId = transactionId;
     }
 
-    public static WalletPaymentMessage fromJSON(String message) {
+    public CurrencyConvToValidatorMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, WalletPaymentMessage.class);
+            return new ObjectMapper().readValue(message, CurrencyConvToValidatorMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
