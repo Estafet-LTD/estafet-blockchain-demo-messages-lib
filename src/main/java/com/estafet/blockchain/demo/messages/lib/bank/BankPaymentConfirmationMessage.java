@@ -20,7 +20,7 @@ public class BankPaymentConfirmationMessage {
         this.transactionId = transactionId;
     }
 
-    public BankPaymentConfirmationMessage fromJSON(String message) {
+    public static BankPaymentConfirmationMessage fromJSON(String message) {
         try {
             return new ObjectMapper().readValue(message, BankPaymentConfirmationMessage.class);
         } catch (IOException e) {

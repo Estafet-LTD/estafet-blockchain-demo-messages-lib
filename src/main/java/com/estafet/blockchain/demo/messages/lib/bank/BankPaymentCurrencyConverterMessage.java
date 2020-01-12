@@ -25,7 +25,7 @@ public class BankPaymentCurrencyConverterMessage {
         this.transactionId = transactionId;
     }
 
-    public BankPaymentCurrencyConverterMessage fromJSON(String message) {
+    public static BankPaymentCurrencyConverterMessage fromJSON(String message) {
         try {
             return new ObjectMapper().readValue(message, BankPaymentCurrencyConverterMessage.class);
         } catch (IOException e) {

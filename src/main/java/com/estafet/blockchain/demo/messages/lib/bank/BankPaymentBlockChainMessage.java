@@ -22,7 +22,7 @@ public class BankPaymentBlockChainMessage {
         this.transactionId = transactionId;
     }
 
-    public BankPaymentBlockChainMessage fromJSON(String message) {
+    public static BankPaymentBlockChainMessage fromJSON(String message) {
         try {
             return new ObjectMapper().readValue(message, BankPaymentBlockChainMessage.class);
         } catch (IOException e) {
