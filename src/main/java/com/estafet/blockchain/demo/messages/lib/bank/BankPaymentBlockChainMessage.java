@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class BankPaymentBlockChainMessage {
 
-    private String cryptoAmount;
+    private int cryptoAmount;
     private String walletAddress;
     private String signature;
     private String transactionId;
@@ -15,7 +15,7 @@ public class BankPaymentBlockChainMessage {
 
     }
 
-    public BankPaymentBlockChainMessage(String cryptoAmount, String walletAddress, String signature, String transactionId) {
+    public BankPaymentBlockChainMessage(int cryptoAmount, String walletAddress, String signature, String transactionId) {
         this.cryptoAmount = cryptoAmount;
         this.walletAddress = walletAddress;
         this.signature = signature;
@@ -38,11 +38,11 @@ public class BankPaymentBlockChainMessage {
         }
     }
 
-    public String getCryptoAmount() {
+    public int getCryptoAmount() {
         return cryptoAmount;
     }
 
-    public void setCryptoAmount(String cryptoAmount) {
+    public void setCryptoAmount(int cryptoAmount) {
         this.cryptoAmount = cryptoAmount;
     }
 
