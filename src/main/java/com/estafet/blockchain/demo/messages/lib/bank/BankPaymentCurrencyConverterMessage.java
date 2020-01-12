@@ -1,11 +1,10 @@
 package com.estafet.blockchain.demo.messages.lib.bank;
 
-import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 
-public class BankToCurrencyConvMessage {
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class BankPaymentCurrencyConverterMessage {
 
     private String currencyAmount;
     private CURRENCY currency;
@@ -13,11 +12,11 @@ public class BankToCurrencyConvMessage {
     private String signature;
     private String transactionId;
 
-    public BankToCurrencyConvMessage() {
+    public BankPaymentCurrencyConverterMessage() {
 
     }
 
-    public BankToCurrencyConvMessage(String currencyAmount, CURRENCY currency, String walletAddress, String signature,
+    public BankPaymentCurrencyConverterMessage(String currencyAmount, CURRENCY currency, String walletAddress, String signature,
                                      String transactionId) {
         this.currencyAmount = currencyAmount;
         this.currency = currency;
@@ -26,9 +25,9 @@ public class BankToCurrencyConvMessage {
         this.transactionId = transactionId;
     }
 
-    public BankToCurrencyConvMessage fromJSON(String message) {
+    public BankPaymentCurrencyConverterMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, BankToCurrencyConvMessage.class);
+            return new ObjectMapper().readValue(message, BankPaymentCurrencyConverterMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

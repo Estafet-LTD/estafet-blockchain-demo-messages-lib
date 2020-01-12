@@ -1,28 +1,28 @@
-package com.estafet.blockchain.demo.messages.lib.transaction;
+package com.estafet.blockchain.demo.messages.lib.bank;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
-public class SuccessTransactionMessage {
+public class BankPaymentConfirmationMessage {
 
     private String status;
     private String signature;
     private String transactionId;
 
-    public SuccessTransactionMessage(){
+    public BankPaymentConfirmationMessage(){
 
     }
 
-    public SuccessTransactionMessage(String status, String signature, String transactionId) {
+    public BankPaymentConfirmationMessage(String status, String signature, String transactionId) {
         this.status = status;
         this.signature = signature;
         this.transactionId = transactionId;
     }
 
-    public SuccessTransactionMessage fromJSON(String message) {
+    public BankPaymentConfirmationMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, SuccessTransactionMessage.class);
+            return new ObjectMapper().readValue(message, BankPaymentConfirmationMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

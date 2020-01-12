@@ -1,31 +1,30 @@
 package com.estafet.blockchain.demo.messages.lib.bank;
 
-import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
-public class CurrencyConvToValidatorMessage {
+public class BankPaymentBlockChainMessage {
 
     private String cryptoAmount;
     private String walletAddress;
     private String signature;
     private String transactionId;
 
-    public CurrencyConvToValidatorMessage (){
+    public BankPaymentBlockChainMessage (){
 
     }
 
-    public CurrencyConvToValidatorMessage(String cryptoAmount, String walletAddress, String signature, String transactionId) {
+    public BankPaymentBlockChainMessage(String cryptoAmount, String walletAddress, String signature, String transactionId) {
         this.cryptoAmount = cryptoAmount;
         this.walletAddress = walletAddress;
         this.signature = signature;
         this.transactionId = transactionId;
     }
 
-    public CurrencyConvToValidatorMessage fromJSON(String message) {
+    public BankPaymentBlockChainMessage fromJSON(String message) {
         try {
-            return new ObjectMapper().readValue(message, CurrencyConvToValidatorMessage.class);
+            return new ObjectMapper().readValue(message, BankPaymentBlockChainMessage.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

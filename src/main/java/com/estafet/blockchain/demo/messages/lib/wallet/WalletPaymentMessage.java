@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class WalletPaymentMessage {
 
-    private String cryptoAmount;
+    private int cryptoAmount;
     private String fromWalletAddress;
     private String toWalletAddress;
     private String signature;
@@ -16,7 +16,7 @@ public class WalletPaymentMessage {
 
     }
 
-    public WalletPaymentMessage(String cryptoAmount, String fromWalletAddress, String toWalletAddress, String signature,
+    public WalletPaymentMessage(int cryptoAmount, String fromWalletAddress, String toWalletAddress, String signature,
                                 String transactionId) {
         this.cryptoAmount = cryptoAmount;
         this.fromWalletAddress = fromWalletAddress;
@@ -41,11 +41,11 @@ public class WalletPaymentMessage {
         }
     }
 
-    public String getCryptoAmount() {
+    public int getCryptoAmount() {
         return cryptoAmount;
     }
 
-    public void setCryptoAmount(String cryptoAmount) {
+    public void setCryptoAmount(int cryptoAmount) {
         this.cryptoAmount = cryptoAmount;
     }
 

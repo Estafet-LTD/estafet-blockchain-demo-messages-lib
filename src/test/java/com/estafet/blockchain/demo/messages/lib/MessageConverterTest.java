@@ -1,11 +1,11 @@
 package com.estafet.blockchain.demo.messages.lib;
 
 import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentMessage;
-import com.estafet.blockchain.demo.messages.lib.bank.BankToCurrencyConvMessage;
+import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentCurrencyConverterMessage;
 import com.estafet.blockchain.demo.messages.lib.bank.CURRENCY;
-import com.estafet.blockchain.demo.messages.lib.bank.CurrencyConvToValidatorMessage;
+import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentBlockChainMessage;
+import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentConfirmationMessage;
 import com.estafet.blockchain.demo.messages.lib.transaction.InvalidTransactionMessage;
-import com.estafet.blockchain.demo.messages.lib.transaction.SuccessTransactionMessage;
 import com.estafet.blockchain.demo.messages.lib.wallet.WalletPaymentMessage;
 import org.junit.Test;
 
@@ -37,45 +37,45 @@ public class MessageConverterTest {
 
     @Test
     public void testToFromJSONBankToCurrencyConvMessage(){
-        BankToCurrencyConvMessage bankToCurrencyConvMessage = new BankToCurrencyConvMessage();
-        bankToCurrencyConvMessage.setCurrency(CURRENCY.USD);
-        bankToCurrencyConvMessage.setCurrencyAmount("101");
-        bankToCurrencyConvMessage.setWalletAddress("efevsgeb");
-        bankToCurrencyConvMessage.setSignature("fse24r2fewser");
-        bankToCurrencyConvMessage.setTransactionId("3333333333");
+        BankPaymentCurrencyConverterMessage bankPaymentCurrencyConverterMessage = new BankPaymentCurrencyConverterMessage();
+        bankPaymentCurrencyConverterMessage.setCurrency(CURRENCY.USD);
+        bankPaymentCurrencyConverterMessage.setCurrencyAmount("101");
+        bankPaymentCurrencyConverterMessage.setWalletAddress("efevsgeb");
+        bankPaymentCurrencyConverterMessage.setSignature("fse24r2fewser");
+        bankPaymentCurrencyConverterMessage.setTransactionId("3333333333");
 
-        String json = bankToCurrencyConvMessage.toJSON();
-        BankToCurrencyConvMessage resultMess = bankToCurrencyConvMessage.fromJSON(json);
+        String json = bankPaymentCurrencyConverterMessage.toJSON();
+        BankPaymentCurrencyConverterMessage resultMess = bankPaymentCurrencyConverterMessage.fromJSON(json);
 
-        assertEquals(bankToCurrencyConvMessage.getCurrency(),resultMess.getCurrency());
-        assertEquals(bankToCurrencyConvMessage.getCurrencyAmount(),resultMess.getCurrencyAmount());
-        assertEquals(bankToCurrencyConvMessage.getWalletAddress(),resultMess.getWalletAddress());
-        assertEquals(bankToCurrencyConvMessage.getSignature(),resultMess.getSignature());
-        assertEquals(bankToCurrencyConvMessage.getTransactionId(),resultMess.getTransactionId());
+        assertEquals(bankPaymentCurrencyConverterMessage.getCurrency(),resultMess.getCurrency());
+        assertEquals(bankPaymentCurrencyConverterMessage.getCurrencyAmount(),resultMess.getCurrencyAmount());
+        assertEquals(bankPaymentCurrencyConverterMessage.getWalletAddress(),resultMess.getWalletAddress());
+        assertEquals(bankPaymentCurrencyConverterMessage.getSignature(),resultMess.getSignature());
+        assertEquals(bankPaymentCurrencyConverterMessage.getTransactionId(),resultMess.getTransactionId());
 
     }
 
     @Test
     public void testToFromJSONCurrencyConvToValidatorMessage(){
-        CurrencyConvToValidatorMessage currencyConvToValidatorMessage = new CurrencyConvToValidatorMessage();
-        currencyConvToValidatorMessage.setCryptoAmount("5");
-        currencyConvToValidatorMessage.setWalletAddress("weegsgwgw");
-        currencyConvToValidatorMessage.setSignature("erherhssh");
-        currencyConvToValidatorMessage.setTransactionId("23222222");
+        BankPaymentBlockChainMessage bankPaymentBlockChainMessage = new BankPaymentBlockChainMessage();
+        bankPaymentBlockChainMessage.setCryptoAmount("5");
+        bankPaymentBlockChainMessage.setWalletAddress("weegsgwgw");
+        bankPaymentBlockChainMessage.setSignature("erherhssh");
+        bankPaymentBlockChainMessage.setTransactionId("23222222");
 
-        String json = currencyConvToValidatorMessage.toJSON();
-        CurrencyConvToValidatorMessage resultMess = currencyConvToValidatorMessage.fromJSON(json);
+        String json = bankPaymentBlockChainMessage.toJSON();
+        BankPaymentBlockChainMessage resultMess = bankPaymentBlockChainMessage.fromJSON(json);
 
-        assertEquals(currencyConvToValidatorMessage.getCryptoAmount(),resultMess.getCryptoAmount());
-        assertEquals(currencyConvToValidatorMessage.getWalletAddress(),resultMess.getWalletAddress());
-        assertEquals(currencyConvToValidatorMessage.getSignature(),resultMess.getSignature());
-        assertEquals(currencyConvToValidatorMessage.getTransactionId(),resultMess.getTransactionId());
+        assertEquals(bankPaymentBlockChainMessage.getCryptoAmount(),resultMess.getCryptoAmount());
+        assertEquals(bankPaymentBlockChainMessage.getWalletAddress(),resultMess.getWalletAddress());
+        assertEquals(bankPaymentBlockChainMessage.getSignature(),resultMess.getSignature());
+        assertEquals(bankPaymentBlockChainMessage.getTransactionId(),resultMess.getTransactionId());
     }
 
     @Test
     public void testToFromJSONWalletPaymentMessage(){
         WalletPaymentMessage walletPaymentMessage = new WalletPaymentMessage();
-        walletPaymentMessage.setCryptoAmount("2");
+        walletPaymentMessage.setCryptoAmount(2);
         walletPaymentMessage.setFromWalletAddress("aaa");
         walletPaymentMessage.setToWalletAddress("qqq");
         walletPaymentMessage.setSignature("qawsed");
@@ -109,16 +109,16 @@ public class MessageConverterTest {
 
     @Test
     public void testToFromJSONSuccessTransactionMessage(){
-        SuccessTransactionMessage successTransactionMessage = new SuccessTransactionMessage();
-        successTransactionMessage.setStatus("OK");
-        successTransactionMessage.setSignature("wfewaeg");
-        successTransactionMessage.setTransactionId("44444444");
+        BankPaymentConfirmationMessage bankPaymentConfirmationMessage = new BankPaymentConfirmationMessage();
+        bankPaymentConfirmationMessage.setStatus("OK");
+        bankPaymentConfirmationMessage.setSignature("wfewaeg");
+        bankPaymentConfirmationMessage.setTransactionId("44444444");
 
-        String json = successTransactionMessage.toJSON();
-        SuccessTransactionMessage resultMess=successTransactionMessage.fromJSON(json);
+        String json = bankPaymentConfirmationMessage.toJSON();
+        BankPaymentConfirmationMessage resultMess=bankPaymentConfirmationMessage.fromJSON(json);
 
-        assertEquals(successTransactionMessage.getStatus(),resultMess.getStatus());
-        assertEquals(successTransactionMessage.getSignature(),resultMess.getSignature());
-        assertEquals(successTransactionMessage.getTransactionId(),resultMess.getTransactionId());
+        assertEquals(bankPaymentConfirmationMessage.getStatus(),resultMess.getStatus());
+        assertEquals(bankPaymentConfirmationMessage.getSignature(),resultMess.getSignature());
+        assertEquals(bankPaymentConfirmationMessage.getTransactionId(),resultMess.getTransactionId());
     }
 }
