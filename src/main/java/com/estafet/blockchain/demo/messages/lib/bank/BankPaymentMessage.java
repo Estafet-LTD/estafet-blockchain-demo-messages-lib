@@ -22,7 +22,7 @@ public class BankPaymentMessage {
 		this.transactionId = transactionId;
 	}
 
-	public BankPaymentMessage fromJSON(String message) {
+	public static BankPaymentMessage fromJSON(String message) {
 		try {
 			return new ObjectMapper().readValue(message, BankPaymentMessage.class);
 		} catch (IOException e) {
