@@ -2,7 +2,6 @@ package com.estafet.blockchain.demo.messages.lib;
 
 import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentMessage;
 import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentCurrencyConverterMessage;
-import com.estafet.blockchain.demo.messages.lib.bank.CURRENCY;
 import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentBlockChainMessage;
 import com.estafet.blockchain.demo.messages.lib.bank.BankPaymentConfirmationMessage;
 import com.estafet.blockchain.demo.messages.lib.transaction.InvalidTransactionMessage;
@@ -34,7 +33,7 @@ public class MessageConverterTest {
     @Test
     public void testToFromJSONBankToCurrencyConvMessage(){
         BankPaymentCurrencyConverterMessage bankPaymentCurrencyConverterMessage = new BankPaymentCurrencyConverterMessage();
-        bankPaymentCurrencyConverterMessage.setCurrency(CURRENCY.USD);
+        bankPaymentCurrencyConverterMessage.setCurrency("USD");
         bankPaymentCurrencyConverterMessage.setCurrencyAmount(101);
         bankPaymentCurrencyConverterMessage.setWalletAddress("efevsgeb");
         bankPaymentCurrencyConverterMessage.setSignature("fse24r2fewser");

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class BankPaymentCurrencyConverterMessage {
 
     private double currencyAmount;
-    private CURRENCY currency;
+    private String currency;
     private String walletAddress;
     private String signature;
     private String transactionId;
@@ -16,7 +16,7 @@ public class BankPaymentCurrencyConverterMessage {
 
     }
 
-    public BankPaymentCurrencyConverterMessage(double currencyAmount, CURRENCY currency, String walletAddress, String signature,
+    public BankPaymentCurrencyConverterMessage(double currencyAmount, String currency, String walletAddress, String signature,
                                      String transactionId) {
         this.currencyAmount = currencyAmount;
         this.currency = currency;
@@ -49,11 +49,11 @@ public class BankPaymentCurrencyConverterMessage {
         this.currencyAmount = currencyAmount;
     }
 
-    public CURRENCY getCurrency() {
+    public String getCurrency() {
         return currency;
     }
 
-    public void setCurrency(CURRENCY currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
 
